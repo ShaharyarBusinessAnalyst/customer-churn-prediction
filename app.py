@@ -95,12 +95,13 @@ with col1:
     PaymentMethod = st.text_input('PaymentMethod')
 
 with col2:
-    MonthlyCharges = st.text_input('MonthlyCharges')
+    OnlineSecurity = st.text_input('OnlineSecurity')
 
 with col3:
+    MonthlyCharges = st.text_input('MonthlyCharges')
+
+with col1:
     TotalCharges = st.text_input('TotalCharges')
-
-
 
 
 # code for Prediction
@@ -112,12 +113,19 @@ if st.button('Customer Churn Result'):
 
     user_input = [
     gender, seniorCitizen, partner, dependents, tenure, phoneService, 
-    multipleLines, internetService, OnlineBackup, DeviceProtection, 
+    multipleLines, internetService, OnlineSecurity, OnlineBackup, DeviceProtection, 
     TechSupport, StreamingTV, StreamingMovies, Contract, 
     PaperlessBilling, PaymentMethod, MonthlyCharges, TotalCharges
+    ]
+
+    columns = [
+    'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'PhoneService', 
+    'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 
+    'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 
+    'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges'
     ] 
 
-    input_data_df = pd.DataFrame([user_input])
+    input_data_df = pd.DataFrame([user_input],columns=columns)
 
     # encode categorical featires using teh saved encoders
     for column, encoder in encoders.items():
