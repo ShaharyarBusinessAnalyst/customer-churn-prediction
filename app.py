@@ -10,30 +10,6 @@ with(open("customer_churn_model.pkl", "rb")) as f:
 loaded_model = model_data["model"]
 feature_names = model_data["feature_names"]
 
-'''
-input_data = {
-    'gender': 'Female',
-    'SeniorCitizen': 0,
-    'Partner': 'Yes',
-    'Dependents': 'No',
-    'tenure': 1,
-    'PhoneService': 'No',
-    'MultipleLines': 'No phone service',
-    'InternetService': 'DSL',
-    'OnlineSecurity': 'No',
-    'OnlineBackup': 'Yes',
-    'DeviceProtection': 'No',
-    'TechSupport': 'No',
-    'StreamingTV': 'No',
-    'StreamingMovies': 'No',
-    'Contract': 'Month-to-month',
-    'PaperlessBilling': 'Yes',
-    'PaymentMethod': 'Electronic check',
-    'MonthlyCharges': 29.85,
-    'TotalCharges': 29.85
-}
-
-'''
 
 
 with open("label_encoder.pkl", "rb") as f:
@@ -51,58 +27,102 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     options = ["Male", "Female"]    
-    #gender = st.text_input('gender')
     gender = st.selectbox(
     "gender", options
     )
 
 with col2:
-    seniorCitizen = st.text_input('SeniorCitizen')
+    options = [1, 0]    
+    seniorCitizen = st.selectbox(
+    "SeniorCitizen", options
+    )
 
 with col3:
-    partner = st.text_input('Partner')
+    options = ["Yes", "No"]    
+    partner = st.selectbox(
+    "Partner", options
+    )
 
 with col1:
-    dependents = st.text_input('Dependents')
+    options = ["Yes", "No"]
+    dependents = st.selectbox(
+    "Dependents", options
+    )
 
 with col2:
     tenure = st.text_input('tenure')
 
 with col3:
-    phoneService = st.text_input('PhoneService')
+    options = ["Yes", "No"]
+    phoneService = st.selectbox(
+    "PhoneService", options
+    )
 
 with col1:
-    multipleLines = st.text_input('MultipleLines')
+    options = ["No phone service", "No"]
+    multipleLines = st.selectbox(
+    "MultipleLines", options
+    )
 
 with col2:
-    internetService = st.text_input('InternetService')
+    options = ['DSL', 'Fiber optic', 'No']
+    internetService = st.selectbox(
+    "InternetService", options
+    )
 
 with col3:
-    OnlineBackup = st.text_input('OnlineBackup')
+    options = ["Yes", "No", "No internet service"]
+    OnlineBackup = st.selectbox(
+    "OnlineBackup", options
+    )
 
 with col1:
-    DeviceProtection = st.text_input('DeviceProtection')
+    options = ["Yes", "No", "No internet service"]
+    DeviceProtection = st.selectbox(
+    "DeviceProtection", options
+    )
 
 with col2:
-    TechSupport = st.text_input('TechSupport')
+    options = ["Yes", "No"]
+    TechSupport = st.selectbox(
+    "TechSupport", options
+    )
 
 with col3:
-    StreamingTV = st.text_input('StreamingTV')
+    options = ["Yes", "No"]
+    StreamingTV = st.selectbox(
+    "StreamingTV", options
+    )
 
 with col1:
-    StreamingMovies = st.text_input('StreamingMovies')
+    options = ["Yes", "No"]
+    StreamingMovies = st.selectbox(
+    "StreamingMovies", options
+    )
 
 with col2:
-    Contract = st.text_input('Contract')
+    options = ["Month-to-month", "One year"]
+    Contract = st.selectbox(
+    "Contract", options
+    )
 
 with col3:
-    PaperlessBilling = st.text_input('PaperlessBilling')
+    options = ["Yes", "No"]
+    PaperlessBilling = st.selectbox(
+    "PaperlessBilling", options
+    )
 
 with col1:
-    PaymentMethod = st.text_input('PaymentMethod')
+    options = ["Electronic check", "Mailed check", "Bank transfer (automatic)"]
+    PaymentMethod = st.selectbox(
+    "PaymentMethod", options
+    )
 
 with col2:
-    OnlineSecurity = st.text_input('OnlineSecurity')
+    options = ["Yes", "No"]
+    OnlineSecurity = st.selectbox(
+    "OnlineSecurity", options
+    )
 
 with col3:
     MonthlyCharges = st.text_input('MonthlyCharges')
