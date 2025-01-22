@@ -46,8 +46,15 @@ st.title('Customer churn Prediction using ML')
 # getting the input data from the user
 col1, col2, col3 = st.columns(3)
 
+
+# Create a dropdown
+
 with col1:
-    gender = st.text_input('gender')
+    options = ["Male", "Female"]    
+    #gender = st.text_input('gender')
+    gender = st.selectbox(
+    "gender", options
+    )
 
 with col2:
     seniorCitizen = st.text_input('SeniorCitizen')
