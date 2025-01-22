@@ -108,7 +108,7 @@ customer_churn = ''
 pred_prob = ''
 # creating a button for Prediction
 
-if st.button('Diabetes Test Result'):
+if st.button('Customer Churn Result'):
 
     user_input = [
     gender, seniorCitizen, partner, dependents, tenure, phoneService, 
