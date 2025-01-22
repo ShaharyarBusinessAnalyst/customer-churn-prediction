@@ -105,7 +105,7 @@ with col3:
 
 # code for Prediction
 customer_churn = ''
-
+pred_prob = ''
 # creating a button for Prediction
 
 if st.button('Diabetes Test Result'):
